@@ -1,0 +1,57 @@
+language: python
+python:
+  - "3.6"
+
+env:
+  global:
+    # General variables
+    - APPLICATION_NAME=slack-bot-template
+#   # BLUEMIX VARIABLES
+#   - BLUEMIX_USERNAME=apikey  # if federated use apikey otherwise provide your IBM Cloud username
+#   - BLUEMIX_PASSWORD=        # if federated use apikey value otherwise provide password. May be preferable to use UI Secret
+#   - BLUEMIX_ORGANIZATION=
+#   - BLUEMIX_SPACE=
+#   - BLUEMIX_REGION=
+#   - BLUEMIX_ENDPOINT=
+
+# command to install dependencies
+install:
+  - pip install -r requirements.txt
+
+
+script:
+  - echo "skipping tests"
+#  - pytest tests/tests.py
+
+
+
+## Deploying to IBM Cloud Cloudfoundary - Non-federated user / Typical users. If you're not sure, use this one.
+#deploy:
+#  edge: true
+#  provider: bluemixcloudfoundry
+#  username: $BLUEMIX_USERNAME
+#  password: $BLUEMIX_PASSWORD
+#  organization: $BLUEMIX_ORGANIZATION
+#  space: $BLUEMIX_SPACE
+#  manifest: manifest.yml          # (optional)  Defaults to manifest.yml.
+#  app_name: $APPLICATION_NAME                      # (optional)
+#  region: $BLUEMIX_REGION                        # (optional)  [ng, eu-gb , au-syd] Defaults to US South region (ng).
+#  api: $BLUEMIX_ENDPOINT
+
+
+## Deploying to IBM Cloud Cloudfoundary - Federated users / Single Sign On
+deploy:
+  edge: true
+  provider: bluemixcloudfoundry
+  username: apikey
+  password: $BLUEMIX_IAM_APIKEY
+  organization: $BLUEMIX_ORGANIZATION
+  space: $BLUEMIX_SPACE
+  manifest: manifest.yml            # (optional)  Defaults to manifest.yml.
+  app_name: $APPLICATION_NAME       # (optional)
+  region: $BLUEMIX_REGION           # (optional)  [ng, eu-gb , au-syd] Defaults to US South region (ng).
+  api: $BLUEMIX_ENDPOINT
+
+
+
+

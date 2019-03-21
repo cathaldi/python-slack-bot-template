@@ -1,0 +1,5 @@
+---
+applications:
+  - name: $APPLICATION_NAME
+    random-route: true
+    memory: 64M
