@@ -72,3 +72,6 @@ Test
 
 ### Deploying to Heroku
 
+Uncomment out the deploy step in .travis.yml and set the secret
+$HEROKU_API_KEY in the UI or manually replace it after creating an encrypted variable and marking it secure.
+

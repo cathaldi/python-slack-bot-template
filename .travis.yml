@@ -54,8 +54,18 @@ script:
 
 
 # Heroku
+#deploy:
+#  provider: heroku
+#  api_key:
+#    secure: $HEROKU_API_KEY
+
+
 deploy:
-  provider: heroku
-  api_key:
-    secure: $HEROKU_API_KEY
+  provider: elasticbeanstalk
+  access_key_id: $AWS_ACCESS_KEY_ID
+  secret_access_key: $AWS_SECRET_ACCESS_KEY
+  region: "us-east-2"
+  app: $APPLICATION_NAME
+  env: "PythonSlackBotTemplate-env"
+  bucket_name: "elasticbeanstalk-us-east-2-855739722882"
 
