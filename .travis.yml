@@ -65,7 +65,7 @@ deploy:
   access_key_id: $AWS_ACCESS_KEY_ID
   secret_access_key: $AWS_SECRET_ACCESS_KEY
   region: "us-east-2"
-  app: "Sample Application"
+  app: "python-slack-bot-template"
   env: "PythonSlackBotTemplate-env"
   bucket_name: "elasticbeanstalk-us-east-2-855739722882"
   skip_cleanup: true
