@@ -69,4 +69,3 @@ deploy:
   env: "PythonSlackBotTemplate-env"
   bucket_name: "elasticbeanstalk-us-east-2-855739722882"
   skip_cleanup: true
-  zip-file: 'aws/s3/ebs.zip'
